@@ -25,6 +25,6 @@ public class StartupInfoLogger implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        log.info("Connected to PostgreSQL at {}, table 'tasks' contains {} task(s)", datasourceUrl, repository.count());
+        log.info("Connected to database {}, table 'tasks' contains {} task(s)", datasourceUrl, repository.count());
     }
 }

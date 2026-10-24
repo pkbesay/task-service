@@ -42,7 +42,7 @@
         "header": [{ "key": "Content-Type", "value": "application/json" }],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"title\": \"Prepare weekly report\",\n  \"description\": \"Collect team results for the week\",\n  \"isCompleted\": false\n}",
+          "raw": "{\n  \"title\": \"Prepare weekly report\",\n  \"description\": \"Collect team results for the week\",\n  \"completed\": false\n}",
           "options": { "raw": { "language": "json" } }
         },
         "url": "{{baseUrl}}/tasks"
@@ -64,7 +64,7 @@
             "type": "text/javascript",
             "exec": [
               "pm.test('200 OK', () => pm.response.to.have.status(200));",
-              "pm.test('Task is completed', () => pm.expect(pm.response.json().isCompleted).to.eql(true));"
+              "pm.test('Task is completed', () => pm.expect(pm.response.json().completed).to.eql(true));"
             ]
           }
         }
@@ -74,7 +74,7 @@
         "header": [{ "key": "Content-Type", "value": "application/json" }],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"title\": \"Prepare weekly report\",\n  \"description\": \"Report sent to the manager\",\n  \"isCompleted\": true\n}",
+          "raw": "{\n  \"title\": \"Prepare weekly report\",\n  \"description\": \"Report sent to the manager\",\n  \"completed\": true\n}",
           "options": { "raw": { "language": "json" } }
         },
         "url": "{{baseUrl}}/tasks/{{taskId}}"

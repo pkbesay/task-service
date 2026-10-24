@@ -15,7 +15,7 @@ CRUD_FILE=docs/02-crud.txt
 PERSISTENCE_FILE=docs/03-persistence.txt
 LOGS_FILE=docs/04-compose-logs.txt
 PSQL=(docker compose exec -T db psql -U postgres -d app -c
-  "SELECT id, title, is_completed, created_at, updated_at FROM tasks ORDER BY id;")
+  "SELECT id, title, completed, created_at, updated_at FROM tasks ORDER BY id;")
 
 LAST=$(mktemp)
 trap 'rm -f "$LAST"' EXIT

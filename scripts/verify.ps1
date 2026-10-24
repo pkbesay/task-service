@@ -19,7 +19,7 @@ $crudFile = Join-Path $docs '02-crud.txt'
 $persistenceFile = Join-Path $docs '03-persistence.txt'
 $logsFile = Join-Path $docs '04-compose-logs.txt'
 $psqlArgs = @('compose', 'exec', '-T', 'db', 'psql', '-U', 'postgres', '-d', 'app', '-c',
-    'SELECT id, title, is_completed, created_at, updated_at FROM tasks ORDER BY id;')
+    'SELECT id, title, completed, created_at, updated_at FROM tasks ORDER BY id;')
 $script:LastOutput = @()
 
 function Initialize-File([string]$File, [string]$Title) {

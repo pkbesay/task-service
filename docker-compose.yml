@@ -25,15 +25,13 @@ services:
       timeout: 5s
       retries: 10
 
-  # API сервиса задач (.NET 9)
+  # API сервиса задач (Java 21, Spring Boot)
   api:
     build:
-      context: ./TaskApi
+      context: ./task-api
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
-      ASPNETCORE_ENVIRONMENT: Production
-      ASPNETCORE_HTTP_PORTS: "8080"
       # Настройки подключения к БД: хост = имя сервиса db в этом файле
       DB_HOST: db
       DB_PORT: "5432"

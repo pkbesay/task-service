@@ -1,31 +1,31 @@
 # Сервис задач: CRUD API + PostgreSQL в Docker Compose
 
-API-приложение на **.NET 9** (ASP.NET Core Minimal API + Entity Framework Core) с CRUD для сущности «Задача».
+API-приложение на **Java 21 + Spring Boot 3.5** (Spring Web, Spring Data JPA / Hibernate, Maven) с CRUD для сущности «Задача».
 База данных — **PostgreSQL 16**, запускается отдельным сервисом `db` в Docker Compose, данные хранятся в volume `db_data`.
 
 ```
               порт 8080 (хост)
                     │
-┌───────────────────▼──────┐   сеть app-network   ┌───────────────────────────┐
-│ api  (.NET 9, Dockerfile)│ ───────────────────► │ db  (postgres:16)         │
-│ DB_HOST=db, DB_PORT=5432 │   Host=db;Port=5432  │ база app, user postgres   │
-└──────────────────────────┘                      └─────────────┬─────────────┘
-                                                                │
-                                                  volume db_data → /var/lib/postgresql/data
+┌───────────────────▼──────────┐  сеть app-network  ┌───────────────────────────┐
+│ api  (Java 21, Spring Boot)  │ ─────────────────► │ db  (postgres:16)         │
+│ DB_HOST=db, DB_PORT=5432     │ jdbc:postgresql:// │ база app, user postgres   │
+└──────────────────────────────┘    db:5432/app     └─────────────┬─────────────┘
+                                                                  │
+                                                    volume db_data → /var/lib/postgresql/data
 ```
 
 ## Тема и сущность
 
-Тема проекта — **сервис задач** (трекер задач). Основная сущность — задача `TaskItem`, таблица `tasks`:
+Тема проекта — **сервис задач** (трекер задач). Основная сущность — задача `Task`, таблица `tasks`:
 
-| Колонка        | Тип                  | Описание                          |
-|----------------|----------------------|-----------------------------------|
-| `id`           | integer, PK, identity | идентификатор задачи             |
-| `title`        | varchar(200), NOT NULL | название (обязательное)         |
-| `description`  | varchar(1000)        | описание                          |
-| `is_completed` | boolean              | выполнена ли задача               |
-| `created_at`   | timestamptz          | когда создана                     |
-| `updated_at`   | timestamptz          | когда последний раз изменялась    |
+| Колонка       | Тип                         | Описание                         |
+|---------------|-----------------------------|----------------------------------|
+| `id`          | bigint, PK, identity        | идентификатор задачи             |
+| `title`       | varchar(200), NOT NULL      | название (обязательное)          |
+| `description` | varchar(1000)               | описание                         |
+| `completed`   | boolean, NOT NULL           | выполнена ли задача              |
+| `created_at`  | timestamp with time zone    | когда создана                    |
+| `updated_at`  | timestamp with time zone    | когда последний раз изменялась   |
 
 ## Эндпоинты
 
@@ -41,28 +41,37 @@ API-приложение на **.NET 9** (ASP.NET Core Minimal API + Entity Fram
 Тело запроса для `POST` и `PUT`:
 
 ```json
-{ "title": "Prepare weekly report", "description": "Collect team results", "isCompleted": false }
+{ "title": "Prepare weekly report", "description": "Collect team results", "completed": false }
 ```
 
 ## Структура проекта
 
 ```
 .
-├── docker-compose.yml          # сервисы api и db, сеть, volume db_data
-├── TaskApi/
-│   ├── Dockerfile              # многоэтапная сборка образа API
+├── docker-compose.yml                  # сервисы api и db, сеть, volume db_data
+├── task-api/
+│   ├── Dockerfile                      # многоэтапная сборка: Maven + JDK 21 → JRE 21
 │   ├── .dockerignore
-│   ├── TaskApi.csproj
-│   ├── Program.cs              # подключение к БД из env, CRUD-эндпоинты
-│   ├── Data/AppDbContext.cs    # EF Core: таблица tasks
-│   ├── Models/TaskItem.cs      # сущность и модель запроса
-│   └── appsettings.json
-├── requests/                   # JSON-тела для curl-запросов
+│   ├── pom.xml                         # Spring Boot 3.5, web, data-jpa, validation, драйвер PostgreSQL
+│   └── src/main/
+│       ├── resources/application.properties   # подключение к БД через переменные окружения
+│       └── java/com/example/taskservice/
+│           ├── TaskServiceApplication.java    # точка входа
+│           ├── task/Task.java                 # сущность JPA → таблица tasks
+│           ├── task/TaskRequest.java          # тело запроса + валидация
+│           ├── task/TaskRepository.java       # Spring Data JPA репозиторий
+│           ├── task/TaskController.java       # CRUD-эндпоинты /tasks
+│           ├── task/TaskNotFoundException.java
+│           ├── ApiExceptionHandler.java       # 400 / 404 в виде {"error": "..."}
+│           ├── HealthController.java          # GET /health
+│           ├── RequestLoggingFilter.java      # строка в логе на каждый запрос
+│           └── StartupInfoLogger.java         # при старте: сколько задач уже в БД
+├── requests/                           # JSON-тела для curl-запросов
 ├── postman/TaskService.postman_collection.json
 ├── scripts/
-│   ├── verify.ps1              # автоматическая проверка (Windows)
-│   └── verify.sh               # автоматическая проверка (Linux/macOS)
-└── docs/                       # выводы проверок (создаются скриптом verify)
+│   ├── verify.ps1                      # автоматическая проверка (Windows)
+│   └── verify.sh                       # автоматическая проверка (Linux/macOS)
+└── docs/                               # выводы проверок (создаются скриптом verify)
 ```
 
 ## Docker Compose
@@ -70,7 +79,7 @@ API-приложение на **.NET 9** (ASP.NET Core Minimal API + Entity Fram
 **Сервисы:**
 
 - `db` — образ `postgres:16`. Healthcheck `pg_isready` каждые 5 секунд. Порт 5432 на хост не публикуется: API обращается к БД по внутренней сети, поэтому не будет конфликта с локально установленным PostgreSQL.
-- `api` — собирается из `TaskApi/Dockerfile`, публикует порт `8080:8080`. Благодаря `depends_on: condition: service_healthy` стартует только после того, как `db` пройдёт healthcheck. Дополнительно API при старте делает до 10 попыток подключения к БД.
+- `api` — собирается из `task-api/Dockerfile`, публикует порт `8080:8080`. Благодаря `depends_on: condition: service_healthy` стартует только после того, как `db` пройдёт healthcheck. Дополнительно пул подключений Hikari при старте до 60 секунд повторяет попытки подключиться к БД.
 
 **Переменные окружения (`environment`):**
 
@@ -84,22 +93,27 @@ API-приложение на **.NET 9** (ASP.NET Core Minimal API + Entity Fram
 | api    | `DB_NAME`           | `app`        | имя базы                                    |
 | api    | `DB_USER`           | `postgres`   | пользователь                                |
 | api    | `DB_PASSWORD`       | `1234`       | пароль                                      |
-| api    | `ASPNETCORE_HTTP_PORTS` | `8080`   | порт, который слушает API в контейнере      |
 
-Из этих переменных API собирает строку подключения `Host=db;Port=5432;Database=app;Username=postgres;Password=1234` (`TaskApi/Program.cs`).
+В `task-api/src/main/resources/application.properties` из них собирается подключение:
+
+```properties
+spring.datasource.url=jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:app}
+spring.datasource.username=${DB_USER:postgres}
+spring.datasource.password=${DB_PASSWORD:1234}
+```
 
 **Сеть:** `app-network` (bridge). Внутри неё работает DNS Docker, поэтому имя `db` превращается в IP-адрес контейнера с PostgreSQL.
 
 **Volume:** `db_data` смонтирован в `/var/lib/postgresql/data`, где PostgreSQL хранит файлы базы. `docker compose down` удаляет контейнеры, но не volume, поэтому после `docker compose up` данные остаются на месте. Полное имя volume — `task-service_db_data` (проект называется `task-service`, это задано в `name:` в compose-файле).
 
-Таблица `tasks` создаётся API при первом запуске (`EnsureCreated`). При следующих запусках API видит, что таблица уже есть, и данные не трогает.
+Таблицу `tasks` создаёт Hibernate при первом запуске (`spring.jpa.hibernate.ddl-auto=update`). При следующих запусках таблица уже есть, и данные не трогаются.
 
 ## Требования
 
 - Docker Desktop (Windows/macOS) или Docker Engine с плагином Docker Compose;
 - свободный порт 8080 на хосте. Если он занят, поменяйте в `docker-compose.yml` `"8080:8080"` на, например, `"8081:8080"` и используйте `http://localhost:8081`.
 
-.NET SDK для запуска через Docker не нужен: сборка идёт внутри образа `mcr.microsoft.com/dotnet/sdk:9.0`.
+JDK и Maven для запуска через Docker не нужны: сборка идёт внутри образа `maven:3.9-eclipse-temurin-21`.
 
 ## Запуск
 
@@ -107,7 +121,7 @@ API-приложение на **.NET 9** (ASP.NET Core Minimal API + Entity Fram
 docker compose up -d --build
 ```
 
-Проверить, что оба сервиса запущены (`db` должен быть `healthy`):
+Первая сборка занимает пару минут: Maven скачивает зависимости. Проверить, что оба сервиса запущены (`db` должен быть `healthy`):
 
 ```bash
 docker compose ps
@@ -140,7 +154,7 @@ curl -i http://localhost:8080/tasks/2
 
 ```bash
 curl -i -X POST http://localhost:8080/tasks -H "Content-Type: application/json" \
-  -d '{"title":"Buy milk","description":"2 liters","isCompleted":false}'
+  -d '{"title":"Buy milk","description":"2 liters","completed":false}'
 ```
 
 Посмотреть данные прямо в PostgreSQL:
@@ -174,8 +188,9 @@ docker compose logs -f         # следить в реальном времен
 На что смотреть:
 
 - `db`: `database system is ready to accept connections`; после перезапуска — `PostgreSQL Database directory appears to contain a database; Skipping initialization` (база взята из volume);
-- `api`: `Connecting to PostgreSQL at db:5432, database 'app'`, затем `table 'tasks' created` при первом запуске или `table 'tasks' already exists - existing data is kept` после перезапуска;
-- `api`: строка на каждый запрос, например `POST /tasks -> 201`, и SQL-команды EF Core (`INSERT INTO tasks ...`, `UPDATE tasks ...`, `DELETE FROM tasks ...`).
+- `api`: `HikariPool-1 - Start completed` (подключились к PostgreSQL), `Started TaskServiceApplication in … seconds`;
+- `api`: `Connected to PostgreSQL at jdbc:postgresql://db:5432/app, table 'tasks' contains N task(s)` — после перезапуска N совпадает с числом задач до него;
+- `api`: строка на каждый запрос, например `POST /tasks -> 201`, и SQL Hibernate (`insert into tasks …`, `update tasks …`, `delete from tasks …`).
 
 ## Автоматическая проверка одной командой
 
@@ -208,6 +223,15 @@ bash scripts/verify.sh
 
 Импортируйте `postman/TaskService.postman_collection.json` (File → Import). Переменная `baseUrl` = `http://localhost:8080`. Запросы удобно запускать по порядку через Collection Runner: `Create task` сохраняет id созданной задачи в переменную `taskId`, а `Get task by id`, `Update task` и `Delete task` используют его.
 
+## Запуск без Docker (для разработки)
+
+Нужны JDK 21+ и Maven (или IntelliJ IDEA — откройте папку `task-api` как Maven-проект). API подключится к PostgreSQL на `localhost:5432` (база `app`, `postgres` / `1234`); другие значения задаются теми же переменными `DB_HOST`, `DB_PORT` и т.д.
+
+```bash
+cd task-api
+mvn spring-boot:run
+```
+
 ## Остановка
 
 ```bash
@@ -217,11 +241,12 @@ docker compose down -v     # остановить и удалить данные
 
 ## Шпаргалка для защиты
 
-- **Сущность:** задача (`TaskItem`, таблица `tasks`): название, описание, признак выполнения, даты создания и изменения.
+- **Сущность:** задача (`Task`, таблица `tasks`): название, описание, признак выполнения, даты создания и изменения.
 - **Связь с темой:** проект — сервис задач, задача — его основной объект. CRUD покрывает весь её жизненный цикл: создать, посмотреть, отметить выполненной или изменить, удалить.
-- **Сервисы в compose:** `api` (наше .NET-приложение, собирается из Dockerfile) и `db` (официальный образ `postgres:16`).
+- **Как устроен API:** `TaskController` (REST, `@RestController`) → `TaskRepository` (Spring Data JPA) → Hibernate → JDBC-драйвер PostgreSQL. Входные данные проверяются аннотациями `@NotBlank` / `@Size`, ошибки возвращаются как 400 / 404.
+- **Сервисы в compose:** `api` (Spring Boot приложение, собирается из Dockerfile) и `db` (официальный образ `postgres:16`).
 - **Почему PostgreSQL:** полноценная серверная СУБД, работает отдельным процессом и отдельным контейнером, хранит данные в своей папке, которую можно вынести в volume. SQLite — это файл внутри процесса приложения, отдельным сервисом её не запустить.
-- **Как API подключается к db:** в `DB_HOST` передаётся имя сервиса `db`. Оба контейнера в сети `app-network`, встроенный DNS Docker превращает `db` в IP контейнера PostgreSQL. `depends_on` с `service_healthy` гарантирует, что API стартует после готовности БД.
-- **Переменные окружения:** `POSTGRES_DB/USER/PASSWORD` для инициализации базы; `DB_HOST/PORT/NAME/USER/PASSWORD` для строки подключения API — настройки не зашиты в код.
+- **Как API подключается к db:** в `DB_HOST` передаётся имя сервиса `db`, из него собирается `jdbc:postgresql://db:5432/app`. Оба контейнера в сети `app-network`, встроенный DNS Docker превращает `db` в IP контейнера PostgreSQL. `depends_on` с `service_healthy` гарантирует, что API стартует после готовности БД.
+- **Переменные окружения:** `POSTGRES_DB/USER/PASSWORD` для инициализации базы; `DB_HOST/PORT/NAME/USER/PASSWORD` для подключения API — настройки не зашиты в код.
 - **Volume `db_data`:** смонтирован в `/var/lib/postgresql/data`, живёт отдельно от контейнера, поэтому `docker compose down` + `up` не теряет данные.
 - **Как проверялось:** curl-запросами (или Postman) прошли Create/Read/Update/Delete, данные проверены через `psql` в контейнере `db`; затем `docker compose down` → `up`, и `GET /tasks` вернул те же записи. Всё это есть в `docs/*.txt` и в `docker compose logs`.

@@ -1,5 +1,4 @@
-bin/
-obj/
-.vs/
+target/
+.idea/
+*.iml
 .vscode/
-*.user

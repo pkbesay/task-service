@@ -1,4 +1,5 @@
-bin/
-obj/
+target/
+.idea/
+*.iml
 Dockerfile
 .dockerignore

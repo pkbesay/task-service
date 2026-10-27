@@ -1,0 +1,8 @@
+﻿# docker run -p + docker ps (2026-10-28 00:54:02)
+
+> docker run -d --name task-api -p 8080:8080 -e SPRING_PROFILES_ACTIVE=standalone task-api
+cfffbe61d3112eee27f61d4b19cd38b6d55391a6b2ab341fe44443f33741ce98
+
+> docker ps
+CONTAINER ID   IMAGE      COMMAND               CREATED          STATUS         PORTS                                         NAMES
+cfffbe61d311   task-api   "java -jar app.jar"   10 seconds ago   Up 9 seconds   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp   task-api

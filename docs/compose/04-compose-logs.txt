@@ -1,0 +1,187 @@
+﻿# docker compose logs (2026-10-28 00:56:44)
+
+> docker compose logs --no-color
+db-1   | The files belonging to this database system will be owned by user "postgres".
+db-1   | This user must also own the server process.
+db-1   | 
+db-1   | The database cluster will be initialized with locale "en_US.utf8".
+db-1   | The default database encoding has accordingly been set to "UTF8".
+db-1   | The default text search configuration will be set to "english".
+db-1   | 
+db-1   | Data page checksums are disabled.
+db-1   | 
+db-1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1   | creating subdirectories ... ok
+db-1   | selecting dynamic shared memory implementation ... posix
+api-1  | 
+api-1  |   .   ____          _            __ _ _
+api-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+api-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api-1  |  =========|_|==============|___/=/_/_/_/
+api-1  | 
+db-1   | selecting default max_connections ... 100
+db-1   | selecting default shared_buffers ... 128MB
+api-1  |  :: Spring Boot ::               (v3.5.16)
+api-1  | 
+db-1   | selecting default time zone ... Etc/UTC
+api-1  | 2026-10-27T21:56:33.885Z  INFO 1 --- [task-api] [           main] c.e.taskservice.TaskServiceApplication   : Starting TaskServiceApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by root in /app)
+db-1   | creating configuration files ... ok
+api-1  | 2026-10-27T21:56:33.888Z  INFO 1 --- [task-api] [           main] c.e.taskservice.TaskServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+api-1  | 2026-10-27T21:56:34.699Z  INFO 1 --- [task-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+api-1  | 2026-10-27T21:56:34.750Z  INFO 1 --- [task-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
+db-1   | running bootstrap script ... ok
+api-1  | 2026-10-27T21:56:35.310Z  INFO 1 --- [task-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+api-1  | 2026-10-27T21:56:35.328Z  INFO 1 --- [task-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api-1  | 2026-10-27T21:56:35.329Z  INFO 1 --- [task-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+db-1   | performing post-bootstrap initialization ... ok
+api-1  | 2026-10-27T21:56:35.366Z  INFO 1 --- [task-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+db-1   | initdb: warning: enabling "trust" authentication for local connections
+api-1  | 2026-10-27T21:56:35.367Z  INFO 1 --- [task-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1429 ms
+api-1  | 2026-10-27T21:56:35.646Z  INFO 1 --- [task-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+api-1  | 2026-10-27T21:56:35.735Z  INFO 1 --- [task-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+api-1  | 2026-10-27T21:56:35.788Z  INFO 1 --- [task-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+api-1  | 2026-10-27T21:56:36.250Z  INFO 1 --- [task-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+api-1  | 2026-10-27T21:56:36.296Z  INFO 1 --- [task-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+db-1   | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+api-1  | 2026-10-27T21:56:36.577Z  INFO 1 --- [task-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@668a32a4
+api-1  | 2026-10-27T21:56:36.579Z  INFO 1 --- [task-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+db-1   | syncing data to disk ... ok
+api-1  | 2026-10-27T21:56:36.659Z  INFO 1 --- [task-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+api-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+db-1   | 
+db-1   | 
+api-1  | 	Database driver: undefined/unknown
+api-1  | 	Database version: 16.15
+api-1  | 	Autocommit mode: undefined/unknown
+api-1  | 	Isolation level: undefined/unknown
+api-1  | 	Minimum pool size: undefined/unknown
+api-1  | 	Maximum pool size: undefined/unknown
+api-1  | 2026-10-27T21:56:37.820Z  INFO 1 --- [task-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+api-1  | 2026-10-27T21:56:37.895Z DEBUG 1 --- [task-api] [           main] org.hibernate.SQL                        : create table tasks (id bigint generated by default as identity, completed boolean not null, created_at timestamp(6) with time zone not null, description varchar(1000), title varchar(200) not null, updated_at timestamp(6) with time zone, primary key (id))
+api-1  | 2026-10-27T21:56:37.913Z  INFO 1 --- [task-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+db-1   | Success. You can now start the database server using:
+db-1   | 
+db-1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1   | 
+db-1   | waiting for server to start....2026-10-27 21:56:28.633 UTC [49] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+db-1   | 2026-10-27 21:56:28.635 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-10-27 21:56:28.644 UTC [52] LOG:  database system was shut down at 2026-10-27 21:56:28 UTC
+db-1   | 2026-10-27 21:56:28.651 UTC [49] LOG:  database system is ready to accept connections
+db-1   |  done
+db-1   | server started
+db-1   | CREATE DATABASE
+db-1   | 
+api-1  | 2026-10-27T21:56:38.970Z  INFO 1 --- [task-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+api-1  | 2026-10-27T21:56:38.983Z  INFO 1 --- [task-api] [           main] c.e.taskservice.TaskServiceApplication   : Started TaskServiceApplication in 5.567 seconds (process running for 6.05)
+db-1   | 
+db-1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1   | 
+db-1   | waiting for server to shut down...2026-10-27 21:56:28.932 UTC [49] LOG:  received fast shutdown request
+db-1   | .2026-10-27 21:56:28.936 UTC [49] LOG:  aborting any active transactions
+db-1   | 2026-10-27 21:56:28.939 UTC [49] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+api-1  | 2026-10-27T21:56:39.425Z DEBUG 1 --- [task-api] [           main] org.hibernate.SQL                        : select count(*) from tasks t1_0
+db-1   | 2026-10-27 21:56:28.939 UTC [50] LOG:  shutting down
+api-1  | 2026-10-27T21:56:39.445Z  INFO 1 --- [task-api] [           main] c.example.taskservice.StartupInfoLogger  : Connected to database jdbc:postgresql://db:5432/app, table 'tasks' contains 0 task(s)
+api-1  | 2026-10-27T21:56:40.872Z  INFO 1 --- [task-api] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+db-1   | 2026-10-27 21:56:28.942 UTC [50] LOG:  checkpoint starting: shutdown immediate
+api-1  | 2026-10-27T21:56:40.873Z  INFO 1 --- [task-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+api-1  | 2026-10-27T21:56:40.875Z  INFO 1 --- [task-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+api-1  | 2026-10-27T21:56:40.991Z  INFO 1 --- [task-api] [nio-8080-exec-1] c.e.taskservice.RequestLoggingFilter     : GET /health -> 200
+db-1   | 2026-10-27 21:56:29.134 UTC [50] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.059 s, sync=0.120 s, total=0.195 s; sync files=301, longest=0.004 s, average=0.001 s; distance=4273 kB, estimate=4273 kB; lsn=0/191F0E8, redo lsn=0/191F0E8
+db-1   | 2026-10-27 21:56:29.145 UTC [49] LOG:  database system is shut down
+db-1   |  done
+db-1   | server stopped
+db-1   | 
+db-1   | PostgreSQL init process complete; ready for start up.
+db-1   | 
+api-1  | 2026-10-27T21:56:41.995Z DEBUG 1 --- [task-api] [nio-8080-exec-2] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 order by t1_0.id
+api-1  | 2026-10-27T21:56:42.018Z  INFO 1 --- [task-api] [nio-8080-exec-2] c.e.taskservice.RequestLoggingFilter     : GET /tasks -> 200
+api-1  | 2026-10-27T21:56:42.240Z DEBUG 1 --- [task-api] [nio-8080-exec-4] org.hibernate.SQL                        : insert into tasks (completed,created_at,description,title,updated_at) values (?,?,?,?,?)
+api-1  | 2026-10-27T21:56:42.281Z  INFO 1 --- [task-api] [nio-8080-exec-4] c.e.taskservice.RequestLoggingFilter     : POST /tasks -> 201
+api-1  | 2026-10-27T21:56:42.427Z DEBUG 1 --- [task-api] [nio-8080-exec-6] org.hibernate.SQL                        : insert into tasks (completed,created_at,description,title,updated_at) values (?,?,?,?,?)
+api-1  | 2026-10-27T21:56:42.440Z  INFO 1 --- [task-api] [nio-8080-exec-6] c.e.taskservice.RequestLoggingFilter     : POST /tasks -> 201
+db-1   | 2026-10-27 21:56:29.274 UTC [1] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+db-1   | 2026-10-27 21:56:29.275 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1   | 2026-10-27 21:56:29.275 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1   | 2026-10-27 21:56:29.279 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-10-27 21:56:29.287 UTC [65] LOG:  database system was shut down at 2026-10-27 21:56:29 UTC
+api-1  | 2026-10-27T21:56:42.525Z DEBUG 1 --- [task-api] [nio-8080-exec-8] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 order by t1_0.id
+db-1   | 2026-10-27 21:56:29.295 UTC [1] LOG:  database system is ready to accept connections
+api-1  | 2026-10-27T21:56:42.546Z  INFO 1 --- [task-api] [nio-8080-exec-8] c.e.taskservice.RequestLoggingFilter     : GET /tasks -> 200
+api-1  | 2026-10-27T21:56:42.664Z DEBUG 1 --- [task-api] [io-8080-exec-10] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+api-1  | 2026-10-27T21:56:42.669Z  INFO 1 --- [task-api] [io-8080-exec-10] c.e.taskservice.RequestLoggingFilter     : GET /tasks/1 -> 200
+api-1  | 2026-10-27T21:56:42.767Z DEBUG 1 --- [task-api] [nio-8080-exec-2] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+api-1  | 2026-10-27T21:56:42.774Z DEBUG 1 --- [task-api] [nio-8080-exec-2] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+api-1  | 2026-10-27T21:56:42.787Z DEBUG 1 --- [task-api] [nio-8080-exec-2] org.hibernate.SQL                        : update tasks set completed=?,description=?,title=?,updated_at=? where id=?
+api-1  | 2026-10-27T21:56:42.801Z  INFO 1 --- [task-api] [nio-8080-exec-2] c.e.taskservice.RequestLoggingFilter     : PUT /tasks/1 -> 200
+api-1  | 2026-10-27T21:56:42.882Z DEBUG 1 --- [task-api] [nio-8080-exec-4] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+api-1  | 2026-10-27T21:56:42.887Z DEBUG 1 --- [task-api] [nio-8080-exec-4] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+api-1  | 2026-10-27T21:56:42.895Z DEBUG 1 --- [task-api] [nio-8080-exec-4] org.hibernate.SQL                        : delete from tasks where id=?
+api-1  | 2026-10-27T21:56:42.909Z  INFO 1 --- [task-api] [nio-8080-exec-4] c.e.taskservice.RequestLoggingFilter     : DELETE /tasks/2 -> 204
+api-1  | 2026-10-27T21:56:42.987Z DEBUG 1 --- [task-api] [nio-8080-exec-6] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+api-1  | 2026-10-27T21:56:42.995Z  INFO 1 --- [task-api] [nio-8080-exec-6] c.e.taskservice.RequestLoggingFilter     : GET /tasks/2 -> 404
+api-1  | 2026-10-27T21:56:43.066Z DEBUG 1 --- [task-api] [nio-8080-exec-8] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 order by t1_0.id
+api-1  | 2026-10-27T21:56:43.070Z  INFO 1 --- [task-api] [nio-8080-exec-8] c.e.taskservice.RequestLoggingFilter     : GET /tasks -> 200
+
+# ---------- after docker compose down / up ----------
+
+> docker compose logs --no-color
+db-1   | 
+db-1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1   | 
+db-1   | 2026-10-27 21:56:49.116 UTC [1] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+db-1   | 2026-10-27 21:56:49.116 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1   | 2026-10-27 21:56:49.117 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1   | 2026-10-27 21:56:49.122 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-10-27 21:56:49.129 UTC [29] LOG:  database system was shut down at 2026-10-27 21:56:46 UTC
+db-1   | 2026-10-27 21:56:49.137 UTC [1] LOG:  database system is ready to accept connections
+api-1  | 
+api-1  |   .   ____          _            __ _ _
+api-1  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api-1  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api-1  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+api-1  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api-1  |  =========|_|==============|___/=/_/_/_/
+api-1  | 
+api-1  |  :: Spring Boot ::               (v3.5.16)
+api-1  | 
+api-1  | 2026-10-27T21:56:56.310Z  INFO 1 --- [task-api] [           main] c.e.taskservice.TaskServiceApplication   : Starting TaskServiceApplication v1.0.0 using Java 21.0.12.1 with PID 1 (/app/app.jar started by root in /app)
+api-1  | 2026-10-27T21:56:56.314Z  INFO 1 --- [task-api] [           main] c.e.taskservice.TaskServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+api-1  | 2026-10-27T21:56:57.398Z  INFO 1 --- [task-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+api-1  | 2026-10-27T21:56:57.467Z  INFO 1 --- [task-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interface.
+api-1  | 2026-10-27T21:56:58.162Z  INFO 1 --- [task-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+api-1  | 2026-10-27T21:56:58.186Z  INFO 1 --- [task-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api-1  | 2026-10-27T21:56:58.187Z  INFO 1 --- [task-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+api-1  | 2026-10-27T21:56:58.235Z  INFO 1 --- [task-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+api-1  | 2026-10-27T21:56:58.236Z  INFO 1 --- [task-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1851 ms
+api-1  | 2026-10-27T21:56:58.565Z  INFO 1 --- [task-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+api-1  | 2026-10-27T21:56:58.659Z  INFO 1 --- [task-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+api-1  | 2026-10-27T21:56:58.707Z  INFO 1 --- [task-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+api-1  | 2026-10-27T21:56:59.269Z  INFO 1 --- [task-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+api-1  | 2026-10-27T21:56:59.341Z  INFO 1 --- [task-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+api-1  | 2026-10-27T21:56:59.673Z  INFO 1 --- [task-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@600bbf9e
+api-1  | 2026-10-27T21:56:59.676Z  INFO 1 --- [task-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+api-1  | 2026-10-27T21:56:59.767Z  INFO 1 --- [task-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+api-1  | 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+api-1  | 	Database driver: undefined/unknown
+api-1  | 	Database version: 16.15
+api-1  | 	Autocommit mode: undefined/unknown
+api-1  | 	Isolation level: undefined/unknown
+api-1  | 	Minimum pool size: undefined/unknown
+api-1  | 	Maximum pool size: undefined/unknown
+api-1  | 2026-10-27T21:57:00.881Z  INFO 1 --- [task-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+api-1  | 2026-10-27T21:57:00.958Z  INFO 1 --- [task-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+api-1  | 2026-10-27T21:57:01.935Z  INFO 1 --- [task-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+api-1  | 2026-10-27T21:57:01.951Z  INFO 1 --- [task-api] [           main] c.e.taskservice.TaskServiceApplication   : Started TaskServiceApplication in 6.307 seconds (process running for 7.039)
+api-1  | 2026-10-27T21:57:02.405Z DEBUG 1 --- [task-api] [           main] org.hibernate.SQL                        : select count(*) from tasks t1_0
+api-1  | 2026-10-27T21:57:02.426Z  INFO 1 --- [task-api] [           main] c.example.taskservice.StartupInfoLogger  : Connected to database jdbc:postgresql://db:5432/app, table 'tasks' contains 1 task(s)
+api-1  | 2026-10-27T21:57:03.342Z  INFO 1 --- [task-api] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+api-1  | 2026-10-27T21:57:03.342Z  INFO 1 --- [task-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+api-1  | 2026-10-27T21:57:03.344Z  INFO 1 --- [task-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+api-1  | 2026-10-27T21:57:03.457Z  INFO 1 --- [task-api] [nio-8080-exec-1] c.e.taskservice.RequestLoggingFilter     : GET /health -> 200
+api-1  | 2026-10-27T21:57:04.444Z DEBUG 1 --- [task-api] [nio-8080-exec-2] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 order by t1_0.id
+api-1  | 2026-10-27T21:57:04.485Z  INFO 1 --- [task-api] [nio-8080-exec-2] c.e.taskservice.RequestLoggingFilter     : GET /tasks -> 200
+api-1  | 2026-10-27T21:57:04.574Z DEBUG 1 --- [task-api] [nio-8080-exec-4] org.hibernate.SQL                        : select t1_0.id,t1_0.completed,t1_0.created_at,t1_0.description,t1_0.title,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+api-1  | 2026-10-27T21:57:04.583Z  INFO 1 --- [task-api] [nio-8080-exec-4] c.e.taskservice.RequestLoggingFilter     : GET /tasks/1 -> 200

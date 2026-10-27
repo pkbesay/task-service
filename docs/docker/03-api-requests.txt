@@ -1,0 +1,42 @@
+﻿# Requests to the API in the container (2026-10-28 00:54:12)
+
+> curl.exe -s -i -X GET http://localhost:8080/health
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:54:12 GMT
+
+{"status":"ok","database":"connected"}
+
+> curl.exe -s -i -X GET http://localhost:8080/tasks
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:54:12 GMT
+
+[{"id":1,"title":"Install Docker Desktop","description":"Needed to build and run the API container","completed":true,"createdAt":"2026-10-27T21:54:10.674179Z","updatedAt":null},{"id":2,"title":"Write README","description":"Describe build, run and check commands","completed":false,"createdAt":"2026-10-27T21:54:10.674179Z","updatedAt":null}]
+
+> curl.exe -s -i -X POST -H "Content-Type: application/json" -d @requests/create-task.json http://localhost:8080/tasks
+HTTP/1.1 201 
+Location: /tasks/3
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:54:13 GMT
+
+{"id":3,"title":"Prepare weekly report","description":"Collect team results for the week","completed":false,"createdAt":"2026-10-27T21:54:13.074795Z","updatedAt":null}
+
+> curl.exe -s -i -X GET http://localhost:8080/tasks/3
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:54:13 GMT
+
+{"id":3,"title":"Prepare weekly report","description":"Collect team results for the week","completed":false,"createdAt":"2026-10-27T21:54:13.074795Z","updatedAt":null}
+
+> curl.exe -s -i -X GET http://localhost:8080/tasks
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:54:13 GMT
+
+[{"id":1,"title":"Install Docker Desktop","description":"Needed to build and run the API container","completed":true,"createdAt":"2026-10-27T21:54:10.674179Z","updatedAt":null},{"id":2,"title":"Write README","description":"Describe build, run and check commands","completed":false,"createdAt":"2026-10-27T21:54:10.674179Z","updatedAt":null},{"id":3,"title":"Prepare weekly report","description":"Collect team results for the week","completed":false,"createdAt":"2026-10-27T21:54:13.074795Z","updatedAt":null}]

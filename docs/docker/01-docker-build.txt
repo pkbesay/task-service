@@ -1,0 +1,611 @@
+﻿# docker build (2026-10-28 00:48:48)
+
+> docker build -t task-api ./task-api
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 712B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre
+#2 ...
+
+#3 [internal] load metadata for docker.io/library/maven:3.9-eclipse-temurin-21
+#3 DONE 4.1s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre
+#2 DONE 4.2s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 86B done
+#4 DONE 0.0s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 resolve docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320 0.1s done
+#5 ...
+
+#6 [internal] load build context
+#6 transferring context: 17.40kB 0.0s done
+#6 DONE 0.1s
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 resolve docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5 0.0s done
+#7 DONE 0.4s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 DONE 0.5s
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 sha256:e63591917c2638c7c92da89daea6d1681f9e1f8459c7fbeaffe405d082fa7512 0B / 2.46kB 0.2s
+#7 sha256:c245b7a1c8de9a3d6528ce4ed90410488f18461475f9194fd1070ac7edd99961 0B / 156B 0.2s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 0B / 53.10MB 0.2s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 0B / 20.14MB 0.2s
+#7 sha256:e63591917c2638c7c92da89daea6d1681f9e1f8459c7fbeaffe405d082fa7512 2.46kB / 2.46kB 0.3s done
+#7 sha256:f3f25b84a7d74315d94ee4108231f8f5e0cd2a44725a7204d5dd6ce91c151697 0B / 392B 0.2s
+#7 sha256:c245b7a1c8de9a3d6528ce4ed90410488f18461475f9194fd1070ac7edd99961 156B / 156B 0.5s done
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 0B / 42.14MB 0.2s
+#7 sha256:f3f25b84a7d74315d94ee4108231f8f5e0cd2a44725a7204d5dd6ce91c151697 392B / 392B 0.7s done
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 3.15MB / 53.10MB 3.0s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 1.05MB / 20.14MB 3.0s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 2.10MB / 20.14MB 3.8s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 6.29MB / 53.10MB 4.5s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 3.15MB / 20.14MB 5.0s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 0B / 42.14MB 5.3s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 9.44MB / 53.10MB 6.0s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 12.58MB / 53.10MB 7.2s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 15.73MB / 53.10MB 8.3s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 18.87MB / 53.10MB 9.5s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 3.15MB / 20.14MB 10.1s
+#7 ...
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:405aa165b3ac61a5d93c2398a95cdd881401cceda86849dde23f6293310b70c0 154B / 154B 2.6s done
+#5 sha256:a466b9e11010eac13b4d1ac50894b683c5fbc95be50dc4dedcdec9c979f98f96 851B / 851B 2.0s done
+#5 sha256:1bf7f7b7d02f74fa2a38d4325c84dcaf0e91faae8e30f221d86c841b0c4f6647 0B / 9.36MB 4.5s
+#5 ...
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 2.10MB / 42.14MB 10.4s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 22.02MB / 53.10MB 11.6s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 25.17MB / 53.10MB 12.8s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 4.19MB / 20.14MB 13.1s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 28.31MB / 53.10MB 14.6s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 5.24MB / 20.14MB 14.7s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 4.19MB / 42.14MB 15.5s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 31.46MB / 53.10MB 16.1s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 34.60MB / 53.10MB 17.4s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 37.75MB / 53.10MB 18.8s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 6.29MB / 20.14MB 19.4s
+#7 ...
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:1bf7f7b7d02f74fa2a38d4325c84dcaf0e91faae8e30f221d86c841b0c4f6647 3.15MB / 9.36MB 14.9s
+#5 ...
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 40.89MB / 53.10MB 20.6s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 7.34MB / 20.14MB 20.6s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 5.24MB / 42.14MB 20.6s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 44.04MB / 53.10MB 22.4s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 47.19MB / 53.10MB 24.2s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 8.39MB / 20.14MB 24.3s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 9.44MB / 20.14MB 25.4s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 7.34MB / 42.14MB 25.7s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 50.33MB / 53.10MB 26.3s
+#7 sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 53.10MB / 53.10MB 28.2s done
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 10.49MB / 20.14MB 28.2s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 11.53MB / 20.14MB 28.8s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 10.49MB / 42.14MB 29.4s
+#7 ...
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:1bf7f7b7d02f74fa2a38d4325c84dcaf0e91faae8e30f221d86c841b0c4f6647 9.36MB / 9.36MB 24.9s done
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 0B / 24.96MB 2.6s
+#5 sha256:49cf9009e0af3adc96baebc58dcde451a6858961e0c027ba7f7ba3075e7240ba 0B / 2.46kB 0.2s
+#5 sha256:49cf9009e0af3adc96baebc58dcde451a6858961e0c027ba7f7ba3075e7240ba 2.46kB / 2.46kB 0.4s done
+#5 ...
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 12.58MB / 20.14MB 31.2s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 13.63MB / 20.14MB 31.7s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 14.68MB / 20.14MB 32.4s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 13.63MB / 42.14MB 32.3s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 15.73MB / 20.14MB 33.6s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 16.78MB / 20.14MB 34.2s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 16.78MB / 42.14MB 35.0s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 17.83MB / 20.14MB 36.8s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 18.87MB / 20.14MB 37.4s
+#7 sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 20.14MB / 20.14MB 38.8s done
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 19.92MB / 42.14MB 38.9s
+#7 ...
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 2.10MB / 24.96MB 12.0s
+#5 sha256:f1408710f65cf2f33054c8d5b33ab1f5684c9ffcfc81bc01e550faec04fa9d0b 157B / 157B 0.3s done
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 4.19MB / 158.12MB 8.9s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 0B / 22.95MB 1.5s
+#5 ...
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 23.07MB / 42.14MB 40.1s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 26.21MB / 42.14MB 41.3s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 29.36MB / 42.14MB 43.4s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 32.51MB / 42.14MB 45.0s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 35.65MB / 42.14MB 46.5s
+#7 ...
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 4.19MB / 24.96MB 18.9s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 7.34MB / 158.12MB 15.8s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 1.05MB / 22.95MB 8.4s
+#5 ...
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 38.80MB / 42.14MB 48.3s
+#7 sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 42.14MB / 42.14MB 50.1s done
+#7 extracting sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf
+#7 ...
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 9.44MB / 24.96MB 25.1s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 9.44MB / 158.12MB 21.9s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 5.24MB / 22.95MB 14.6s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 3.15MB / 29.76MB 2.9s
+#5 ...
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 extracting sha256:edafa32f5d9e4d9629f0dbc6c01e63c79ff08133c01cfb7d3363aa8bd8a614cf 3.5s done
+#7 extracting sha256:f3f25b84a7d74315d94ee4108231f8f5e0cd2a44725a7204d5dd6ce91c151697 0.0s done
+#7 DONE 54.5s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 5.24MB / 29.76MB 4.4s
+#5 ...
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 extracting sha256:dbf7808018106e8dd0eb0c93db936d01666d9366c7aea09fa71d890a0cf44b62 1.2s done
+#7 DONE 55.8s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 11.53MB / 24.96MB 27.0s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 7.34MB / 22.95MB 17.3s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 7.34MB / 29.76MB 5.9s
+#5 ...
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jre@sha256:6ef3295d2cef695fd288f928a15a92081a7ce61da9e785b6fd09b2ea0c1aa8e5
+#7 extracting sha256:fc572c000eb78b4ce6f7e796699cb01a2f90aefa1eafe945802155c1a457c176 1.4s done
+#7 extracting sha256:c245b7a1c8de9a3d6528ce4ed90410488f18461475f9194fd1070ac7edd99961 0.0s done
+#7 extracting sha256:e63591917c2638c7c92da89daea6d1681f9e1f8459c7fbeaffe405d082fa7512 0.0s done
+#7 DONE 57.2s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 13.63MB / 24.96MB 29.0s
+#5 ...
+
+#8 [stage-1 2/3] WORKDIR /app
+#8 DONE 0.6s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 10.49MB / 158.12MB 27.0s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 9.44MB / 29.76MB 8.0s
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 15.73MB / 24.96MB 31.1s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 11.53MB / 29.76MB 9.9s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 8.39MB / 22.95MB 22.4s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 13.63MB / 29.76MB 11.0s
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 17.83MB / 24.96MB 33.6s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 15.73MB / 29.76MB 12.0s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 12.58MB / 158.12MB 32.1s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 17.83MB / 29.76MB 13.2s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 19.92MB / 29.76MB 14.3s
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 19.92MB / 24.96MB 37.1s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 22.02MB / 29.76MB 15.5s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 9.44MB / 22.95MB 27.5s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 24.12MB / 29.76MB 16.5s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 26.21MB / 29.76MB 17.7s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 13.63MB / 158.12MB 37.2s
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 22.02MB / 24.96MB 40.6s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 28.31MB / 29.76MB 18.9s
+#5 sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 29.76MB / 29.76MB 19.9s done
+#5 extracting sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 10.49MB / 22.95MB 32.6s
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 24.12MB / 24.96MB 44.4s
+#5 extracting sha256:edd1ed89f0d443580bd42e5a10cd8736aba5a3438b2a0645c2ebb50119bb0eba 2.0s done
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 17.83MB / 158.12MB 42.3s
+#5 sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 24.96MB / 24.96MB 45.6s done
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 12.58MB / 22.95MB 35.4s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 26.21MB / 158.12MB 45.8s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 14.68MB / 22.95MB 38.9s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 16.78MB / 22.95MB 41.9s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 34.60MB / 158.12MB 49.8s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 18.87MB / 22.95MB 43.7s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 20.97MB / 22.95MB 44.6s
+#5 sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 22.95MB / 22.95MB 45.6s done
+#5 extracting sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1
+#5 extracting sha256:c5b9275bc0db751e2d75dfe63b7fe841f35111d72e930782de032d5d13d45ab1 1.3s done
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 41.94MB / 158.12MB 54.9s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 50.33MB / 158.12MB 58.8s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 58.72MB / 158.12MB 61.8s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 67.11MB / 158.12MB 64.5s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 75.50MB / 158.12MB 67.5s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 83.89MB / 158.12MB 70.8s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 92.27MB / 158.12MB 74.4s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 100.66MB / 158.12MB 77.7s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 109.05MB / 158.12MB 80.2s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 117.44MB / 158.12MB 83.7s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 125.83MB / 158.12MB 86.4s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 134.22MB / 158.12MB 89.5s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 142.61MB / 158.12MB 92.4s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 150.99MB / 158.12MB 95.7s
+#5 sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 158.12MB / 158.12MB 98.0s done
+#5 extracting sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318
+#5 extracting sha256:07bad0cccfa15aac629986ee3771c057c7690f9ce635dda839f652e54c911318 2.5s done
+#5 DONE 132.3s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 extracting sha256:f1408710f65cf2f33054c8d5b33ab1f5684c9ffcfc81bc01e550faec04fa9d0b 0.0s done
+#5 extracting sha256:49cf9009e0af3adc96baebc58dcde451a6858961e0c027ba7f7ba3075e7240ba 0.0s done
+#5 extracting sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd
+#5 extracting sha256:bd0bb49686d38ffc090c15f30d472cdb0354fb8cf46c03f21f4f2764d4e4efcd 1.8s done
+#5 DONE 134.2s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 extracting sha256:1bf7f7b7d02f74fa2a38d4325c84dcaf0e91faae8e30f221d86c841b0c4f6647 0.1s done
+#5 DONE 134.3s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+#5 extracting sha256:a466b9e11010eac13b4d1ac50894b683c5fbc95be50dc4dedcdec9c979f98f96 0.0s done
+#5 extracting sha256:405aa165b3ac61a5d93c2398a95cdd881401cceda86849dde23f6293310b70c0 0.0s done
+#5 DONE 134.4s
+
+#9 [build 2/6] WORKDIR /src
+#9 DONE 0.4s
+
+#10 [build 3/6] COPY pom.xml ./
+#10 DONE 0.0s
+
+#11 [build 4/6] RUN mvn -B -ntp dependency:go-offline
+#11 2.718 [INFO] Scanning for projects...
+#11 15.15 [INFO] 
+#11 15.15 [INFO] ------------------------< com.example:task-api >------------------------
+#11 15.15 [INFO] Building task-api 1.0.0
+#11 15.15 [INFO]   from pom.xml
+#11 15.15 [INFO] --------------------------------[ jar ]---------------------------------
+#11 15.16 [INFO] 
+#11 15.17 [INFO] --- dependency:3.8.1:go-offline (default-cli) @ task-api ---
+#11 149.3 [INFO] Resolved plugin: jetty-servlet-9.4.46.v20220331.jar
+#11 149.3 [INFO] Resolved plugin: maven-install-plugin-3.1.4.jar
+#11 149.3 [INFO] Resolved plugin: asm-9.7.jar
+#11 149.3 [INFO] Resolved plugin: doxia-module-twiki-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: velocity-tools-2.0.jar
+#11 149.3 [INFO] Resolved plugin: jackson-core-2.21.4.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-gfm-tasklist-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: spring-boot-maven-plugin-3.5.16.jar
+#11 149.3 [INFO] Resolved plugin: spring-boot-loader-tools-3.5.16.jar
+#11 149.3 [INFO] Resolved plugin: maven-resolver-api-1.9.22.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-admonition-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: maven-core-3.2.5.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-footnotes-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-gfm-strikethrough-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-media-tags-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: doxia-module-xhtml-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: spring-core-6.2.19.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-util-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-anchorlink-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: plexus-java-1.5.2.jar
+#11 149.3 [INFO] Resolved plugin: maven-resolver-util-1.9.22.jar
+#11 149.3 [INFO] Resolved plugin: aether-api-1.0.0.v20140518.jar
+#11 149.3 [INFO] Resolved plugin: autolink-0.6.0.jar
+#11 149.3 [INFO] Resolved plugin: maven-filtering-3.3.1.jar
+#11 149.3 [INFO] Resolved plugin: asm-commons-9.7.jar
+#11 149.3 [INFO] Resolved plugin: maven-archiver-3.6.2.jar
+#11 149.3 [INFO] Resolved plugin: doxia-skin-model-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: dom4j-1.1.jar
+#11 149.3 [INFO] Resolved plugin: plexus-compiler-api-2.15.0.jar
+#11 149.3 [INFO] Resolved plugin: commons-io-2.16.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-youtrack-converter-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: tomlj-1.0.0.jar
+#11 149.3 [INFO] Resolved plugin: httpclient-4.5.13.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-toc-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: asm-9.8.jar
+#11 149.3 [INFO] Resolved plugin: jetty-http-9.4.46.v20220331.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-jira-converter-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: maven-reporting-api-3.1.1.jar
+#11 149.3 [INFO] Resolved plugin: maven-plugin-api-3.2.5.jar
+#11 149.3 [INFO] Resolved plugin: commons-codec-1.17.1.jar
+#11 149.3 [INFO] Resolved plugin: sisu-guice-3.2.3-no_aop.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-attributes-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: commons-lang3-3.8.1.jar
+#11 149.3 [INFO] Resolved plugin: jackson-module-parameter-names-2.21.4.jar
+#11 149.3 [INFO] Resolved plugin: maven-aether-provider-3.2.5.jar
+#11 149.3 [INFO] Resolved plugin: aether-util-1.0.0.v20140518.jar
+#11 149.3 [INFO] Resolved plugin: jetty-security-9.4.46.v20220331.jar
+#11 149.3 [INFO] Resolved plugin: httpclient5-5.5.2.jar
+#11 149.3 [INFO] Resolved plugin: maven-common-artifact-filters-3.4.0.jar
+#11 149.3 [INFO] Resolved plugin: org.eclipse.sisu.plexus-0.3.5.jar
+#11 149.3 [INFO] Resolved plugin: surefire-api-3.5.6.jar
+#11 149.3 [INFO] Resolved plugin: doxia-core-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-ins-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: google-collections-1.0.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-emoji-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: maven-resolver-api-1.4.1.jar
+#11 149.3 [INFO] Resolved plugin: doxia-integration-tools-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: surefire-logger-api-3.5.6.jar
+#11 149.3 [INFO] Resolved plugin: plexus-compiler-manager-2.15.0.jar
+#11 149.3 [INFO] Resolved plugin: micrometer-observation-1.15.12.jar
+#11 149.3 [INFO] Resolved plugin: maven-repository-metadata-3.2.5.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-jekyll-front-matter-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: doxia-decoration-model-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-all-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: spring-beans-6.2.19.jar
+#11 149.3 [INFO] Resolved plugin: maven-shared-incremental-1.1.jar
+#11 149.3 [INFO] Resolved plugin: file-management-3.1.0.jar
+#11 149.3 [INFO] Resolved plugin: commons-compress-1.26.1.jar
+#11 149.3 [INFO] Resolved plugin: jetty-webapp-9.4.46.v20220331.jar
+#11 149.3 [INFO] Resolved plugin: maven-surefire-plugin-3.5.6.jar
+#11 149.3 [INFO] Resolved plugin: plexus-io-3.2.0.jar
+#11 149.3 [INFO] Resolved plugin: xbean-reflect-3.7.jar
+#11 149.3 [INFO] Resolved plugin: maven-reporting-exec-1.6.0.jar
+#11 149.3 [INFO] Resolved plugin: doxia-sink-api-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: surefire-shared-utils-3.5.6.jar
+#11 149.3 [INFO] Resolved plugin: jetty-xml-9.4.46.v20220331.jar
+#11 149.3 [INFO] Resolved plugin: plexus-velocity-1.2.jar
+#11 149.3 [INFO] Resolved plugin: plexus-container-default-2.1.0.jar
+#11 149.3 [INFO] Resolved plugin: commons-codec-1.11.jar
+#11 149.3 [INFO] Resolved plugin: snappy-0.4.jar
+#11 149.3 [INFO] Resolved plugin: maven-deploy-plugin-3.1.4.jar
+#11 149.3 [INFO] Resolved plugin: jsr305-3.0.2.jar
+#11 149.3 [INFO] Resolved plugin: plexus-build-api-0.0.7.jar
+#11 149.3 [INFO] Resolved plugin: doxia-module-fml-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: commons-digester-1.8.jar
+#11 149.3 [INFO] Resolved plugin: jetty-server-9.4.46.v20220331.jar
+#11 149.3 [INFO] Resolved plugin: maven-shared-utils-3.4.2.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-abbreviation-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: maven-archiver-3.5.2.jar
+#11 149.3 [INFO] Resolved plugin: surefire-extensions-spi-3.5.6.jar
+#11 149.3 [INFO] Resolved plugin: zstd-jni-1.5.5-11.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-definition-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: doxia-logging-api-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: plexus-xml-3.0.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-yaml-front-matter-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: jna-5.17.0.jar
+#11 149.3 [INFO] Resolved plugin: maven-site-plugin-3.12.1.jar
+#11 149.3 [INFO] Resolved plugin: asm-9.9.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-superscript-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: commons-collections-3.2.2.jar
+#11 149.3 [INFO] Resolved plugin: doxia-module-markdown-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-xwiki-macros-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: commons-compress-1.20.jar
+#11 149.3 [INFO] Resolved plugin: maven-resources-plugin-3.3.1.jar
+#11 149.3 [INFO] Resolved plugin: velocity-1.7.jar
+#11 149.3 [INFO] Resolved plugin: plexus-utils-3.5.1.jar
+#11 149.3 [INFO] Resolved plugin: aopalliance-1.0.jar
+#11 149.3 [INFO] Resolved plugin: aether-spi-1.0.0.v20140518.jar
+#11 149.3 [INFO] Resolved plugin: plexus-interpolation-1.26.jar
+#11 149.3 [INFO] Resolved plugin: jackson-annotations-2.21.jar
+#11 149.3 [INFO] Resolved plugin: maven-settings-builder-3.2.5.jar
+#11 149.3 [INFO] Resolved plugin: httpcore-4.4.14.jar
+#11 149.3 [INFO] Resolved plugin: commons-lang3-3.12.0.jar
+#11 149.3 [INFO] Resolved plugin: maven-artifact-3.2.5.jar
+#11 149.3 [INFO] Resolved plugin: plexus-compiler-javac-2.15.0.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-enumerated-reference-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: plexus-component-annotations-2.1.1.jar
+#11 149.3 [INFO] Resolved plugin: surefire-booter-3.5.6.jar
+#11 149.3 [INFO] Resolved plugin: asm-tree-9.7.jar
+#11 149.3 [INFO] Resolved plugin: commons-logging-1.2.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-escaped-character-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: jdependency-2.10.jar
+#11 149.3 [INFO] Resolved plugin: httpcore5-h2-5.3.6.jar
+#11 149.3 [INFO] Resolved plugin: plexus-cipher-1.4.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: plexus-utils-3.4.2.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-aside-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-wikilink-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: org.eclipse.sisu.inject-0.3.5.jar
+#11 149.3 [INFO] Resolved plugin: plexus-io-3.4.2.jar
+#11 149.3 [INFO] Resolved plugin: maven-surefire-common-3.5.6.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-gfm-tables-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: jackson-databind-2.21.4.jar
+#11 149.3 [INFO] Resolved plugin: antlr4-runtime-4.7.2.jar
+#11 149.3 [INFO] Resolved plugin: plexus-interpolation-1.27.jar
+#11 149.3 [INFO] Resolved plugin: commons-io-2.11.0.jar
+#11 149.3 [INFO] Resolved plugin: jetty-io-9.4.46.v20220331.jar
+#11 149.3 [INFO] Resolved plugin: cdi-api-1.2.jar
+#11 149.3 [INFO] Resolved plugin: commons-chain-1.1.jar
+#11 149.3 [INFO] Resolved plugin: plexus-utils-4.0.2.jar
+#11 149.3 [INFO] Resolved plugin: commons-codec-1.16.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-html-parser-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: javax.inject-1.jar
+#11 149.3 [INFO] Resolved plugin: maven-shared-utils-3.3.4.jar
+#11 149.3 [INFO] Resolved plugin: javax.servlet-api-3.1.0.jar
+#11 149.3 [INFO] Resolved plugin: jetty-util-ajax-9.4.46.v20220331.jar
+#11 149.3 [INFO] Resolved plugin: maven-compiler-plugin-3.14.1.jar
+#11 149.3 [INFO] Resolved plugin: maven-settings-3.2.5.jar
+#11 149.3 [INFO] Resolved plugin: jsoup-1.10.2.jar
+#11 149.3 [INFO] Resolved plugin: oro-2.0.8.jar
+#11 149.3 [INFO] Resolved plugin: xz-1.9.jar
+#11 149.3 [INFO] Resolved plugin: surefire-extensions-api-3.5.6.jar
+#11 149.3 [INFO] Resolved plugin: aether-impl-1.0.0.v20140518.jar
+#11 149.3 [INFO] Resolved plugin: commons-text-1.3.jar
+#11 149.3 [INFO] Resolved plugin: commons-lang-2.4.jar
+#11 149.3 [INFO] Resolved plugin: slf4j-api-1.7.36.jar
+#11 149.3 [INFO] Resolved plugin: maven-resolver-util-1.4.1.jar
+#11 149.3 [INFO] Resolved plugin: doxia-module-apt-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-gfm-issues-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: jetty-util-9.4.46.v20220331.jar
+#11 149.3 [INFO] Resolved plugin: maven-model-builder-3.2.5.jar
+#11 149.3 [INFO] Resolved plugin: maven-jar-plugin-3.4.2.jar
+#11 149.3 [INFO] Resolved plugin: plexus-archiver-4.2.7.jar
+#11 149.3 [INFO] Resolved plugin: commons-io-2.6.jar
+#11 149.3 [INFO] Resolved plugin: maven-shade-plugin-3.6.0.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-youtube-embedded-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-formatter-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: maven-model-3.2.5.jar
+#11 149.3 [INFO] Resolved plugin: spring-context-6.2.19.jar
+#11 149.3 [INFO] Resolved plugin: plexus-utils-4.0.1.jar
+#11 149.3 [INFO] Resolved plugin: jdom2-2.0.6.1.jar
+#11 149.3 [INFO] Resolved plugin: commons-lang3-3.16.0.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-profile-pegdown-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: doxia-module-docbook-simple-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: guava-16.0.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-typographic-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-autolink-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-jekyll-tag-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: commons-compress-1.27.1.jar
+#11 149.3 [INFO] Resolved plugin: spring-jcl-6.2.19.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-gitlab-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: doxia-module-xdoc-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: doxia-site-renderer-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: commons-beanutils-1.7.0.jar
+#11 149.3 [INFO] Resolved plugin: httpcore5-5.3.6.jar
+#11 149.3 [INFO] Resolved plugin: commons-lang3-3.14.0.jar
+#11 149.3 [INFO] Resolved plugin: plexus-classworlds-2.5.2.jar
+#11 149.3 [INFO] Resolved plugin: spring-boot-buildpack-platform-3.5.16.jar
+#11 149.3 [INFO] Resolved plugin: doxia-module-confluence-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: micrometer-commons-1.15.12.jar
+#11 149.3 [INFO] Resolved plugin: doxia-module-xhtml5-1.11.1.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-tables-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: javax.annotation-api-1.2.jar
+#11 149.3 [INFO] Resolved plugin: jna-platform-5.17.0.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-macros-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: plexus-sec-dispatcher-1.3.jar
+#11 149.3 [INFO] Resolved plugin: plexus-java-1.5.0.jar
+#11 149.3 [INFO] Resolved plugin: plexus-i18n-1.0-beta-10.jar
+#11 149.3 [INFO] Resolved plugin: spring-expression-6.2.19.jar
+#11 149.3 [INFO] Resolved plugin: qdox-2.2.0.jar
+#11 149.3 [INFO] Resolved plugin: flexmark-ext-gfm-users-0.42.14.jar
+#11 149.3 [INFO] Resolved plugin: maven-clean-plugin-3.4.1.jar
+#11 149.3 [INFO] Resolved plugin: plexus-archiver-4.9.2.jar
+#11 149.3 [INFO] Resolved plugin: spring-aop-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-starter-json-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: jboss-logging-3.4.3.Final.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: snakeyaml-2.4.jar
+#11 149.3 [INFO] Resolved dependency: aspectjweaver-1.9.22.1.jar
+#11 149.3 [INFO] Resolved dependency: logback-classic-1.5.34.jar
+#11 149.3 [INFO] Resolved dependency: spring-data-commons-3.5.13.jar
+#11 149.3 [INFO] Resolved dependency: spring-tx-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-starter-validation-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: log4j-to-slf4j-2.24.3.jar
+#11 149.3 [INFO] Resolved dependency: slf4j-api-2.0.17.jar
+#11 149.3 [INFO] Resolved dependency: jackson-core-2.21.4.jar
+#11 149.3 [INFO] Resolved dependency: jackson-annotations-2.21.jar
+#11 149.3 [INFO] Resolved dependency: jaxb-core-4.0.2.jar
+#11 149.3 [INFO] Resolved dependency: micrometer-observation-1.15.12.jar
+#11 149.3 [INFO] Resolved dependency: jakarta.activation-api-2.1.0.jar
+#11 149.3 [INFO] Resolved dependency: h2-2.3.232.jar
+#11 149.3 [INFO] Resolved dependency: tomcat-embed-core-10.1.55.jar
+#11 149.3 [INFO] Resolved dependency: spring-beans-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-autoconfigure-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: tomcat-embed-el-10.1.55.jar
+#11 149.3 [INFO] Resolved dependency: jackson-datatype-jdk8-2.21.4.jar
+#11 149.3 [INFO] Resolved dependency: spring-core-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: spring-context-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: spring-aspects-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-starter-web-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: spring-jdbc-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: jakarta.persistence-api-3.1.0.jar
+#11 149.3 [INFO] Resolved dependency: antlr4-runtime-4.13.2.jar
+#11 149.3 [INFO] Resolved dependency: jandex-3.2.0.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-starter-logging-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: spring-data-jpa-3.5.13.jar
+#11 149.3 [INFO] Resolved dependency: jakarta.transaction-api-2.0.1.jar
+#11 149.3 [INFO] Resolved dependency: jakarta.validation-api-3.0.2.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-starter-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: logback-core-1.5.34.jar
+#11 149.3 [INFO] Resolved dependency: hibernate-core-6.6.53.Final.jar
+#11 149.3 [INFO] Resolved dependency: angus-activation-2.0.0.jar
+#11 149.3 [INFO] Resolved dependency: jul-to-slf4j-2.0.18.jar
+#11 149.3 [INFO] Resolved dependency: spring-jcl-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-starter-data-jpa-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: hibernate-validator-8.0.3.Final.jar
+#11 149.3 [INFO] Resolved dependency: jackson-databind-2.21.4.jar
+#11 149.3 [INFO] Resolved dependency: jakarta.annotation-api-2.1.1.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-starter-jdbc-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: jaxb-runtime-4.0.2.jar
+#11 149.3 [INFO] Resolved dependency: spring-orm-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: jakarta.inject-api-2.0.1.jar
+#11 149.3 [INFO] Resolved dependency: spring-boot-starter-tomcat-3.5.16.jar
+#11 149.3 [INFO] Resolved dependency: jackson-datatype-jsr310-2.21.4.jar
+#11 149.3 [INFO] Resolved dependency: micrometer-commons-1.15.12.jar
+#11 149.3 [INFO] Resolved dependency: tomcat-embed-websocket-10.1.55.jar
+#11 149.3 [INFO] Resolved dependency: spring-web-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: txw2-4.0.2.jar
+#11 149.3 [INFO] Resolved dependency: byte-buddy-1.17.8.jar
+#11 149.3 [INFO] Resolved dependency: spring-webmvc-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: jackson-module-parameter-names-2.21.4.jar
+#11 149.3 [INFO] Resolved dependency: hibernate-commons-annotations-7.0.3.Final.jar
+#11 149.3 [INFO] Resolved dependency: istack-commons-runtime-4.1.1.jar
+#11 149.3 [INFO] Resolved dependency: spring-expression-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: jboss-logging-3.5.0.Final.jar
+#11 149.3 [INFO] Resolved dependency: postgresql-42.7.11.jar
+#11 149.3 [INFO] Resolved dependency: slf4j-api-2.0.18.jar
+#11 149.3 [INFO] Resolved dependency: log4j-api-2.24.3.jar
+#11 149.3 [INFO] Resolved dependency: classmate-1.5.1.jar
+#11 149.3 [INFO] Resolved dependency: spring-aop-6.2.19.jar
+#11 149.3 [INFO] Resolved dependency: jakarta.xml.bind-api-4.0.0.jar
+#11 149.3 [INFO] Resolved dependency: HikariCP-6.3.3.jar
+#11 149.3 [INFO] ------------------------------------------------------------------------
+#11 149.3 [INFO] BUILD SUCCESS
+#11 149.3 [INFO] ------------------------------------------------------------------------
+#11 149.3 [INFO] Total time:  02:26 min
+#11 149.3 [INFO] Finished at: 2026-10-27T21:53:39Z
+#11 149.3 [INFO] ------------------------------------------------------------------------
+#11 DONE 149.5s
+
+#12 [build 5/6] COPY src ./src
+#12 DONE 0.1s
+
+#13 [build 6/6] RUN mvn -B -ntp package -DskipTests
+#13 2.479 [INFO] Scanning for projects...
+#13 2.886 [INFO] 
+#13 2.886 [INFO] ------------------------< com.example:task-api >------------------------
+#13 2.886 [INFO] Building task-api 1.0.0
+#13 2.886 [INFO]   from pom.xml
+#13 2.887 [INFO] --------------------------------[ jar ]---------------------------------
+#13 9.376 [INFO] 
+#13 9.377 [INFO] --- resources:3.3.1:resources (default-resources) @ task-api ---
+#13 9.565 [INFO] Copying 2 resources from src/main/resources to target/classes
+#13 9.586 [INFO] Copying 1 resource from src/main/resources to target/classes
+#13 9.591 [INFO] 
+#13 9.591 [INFO] --- compiler:3.14.1:compile (default-compile) @ task-api ---
+#13 9.748 [INFO] Recompiling the module because of changed source code.
+#13 9.761 [INFO] Compiling 10 source files with javac [debug parameters release 21] to target/classes
+#13 11.18 [INFO] 
+#13 11.18 [INFO] --- resources:3.3.1:testResources (default-testResources) @ task-api ---
+#13 11.20 [INFO] skip non existing resourceDirectory /src/src/test/resources
+#13 11.20 [INFO] 
+#13 11.20 [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ task-api ---
+#13 11.21 [INFO] No sources to compile
+#13 11.21 [INFO] 
+#13 11.21 [INFO] --- surefire:3.5.6:test (default-test) @ task-api ---
+#13 11.39 [INFO] Tests are skipped.
+#13 11.39 [INFO] 
+#13 11.39 [INFO] --- jar:3.4.2:jar (default-jar) @ task-api ---
+#13 11.79 [INFO] Building jar: /src/target/task-api.jar
+#13 11.86 [INFO] 
+#13 11.86 [INFO] --- spring-boot:3.5.16:repackage (repackage) @ task-api ---
+#13 12.45 [INFO] Replacing main artifact /src/target/task-api.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+#13 12.45 [INFO] The original artifact has been renamed to /src/target/task-api.jar.original
+#13 12.45 [INFO] ------------------------------------------------------------------------
+#13 12.45 [INFO] BUILD SUCCESS
+#13 12.45 [INFO] ------------------------------------------------------------------------
+#13 12.45 [INFO] Total time:  10.007 s
+#13 12.45 [INFO] Finished at: 2026-10-27T21:53:52Z
+#13 12.45 [INFO] ------------------------------------------------------------------------
+#13 DONE 12.6s
+
+#14 [stage-1 3/3] COPY --from=build /src/target/task-api.jar ./app.jar
+#14 DONE 0.1s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 2.5s done
+#15 exporting manifest sha256:54e45130783f3a77f3c8865f727e6fdd9188bc7f552a94cd2b42cd0d796b215d 0.0s done
+#15 exporting config sha256:422fc71a831f6480641c914fb8ce6dd3f54246d9d5400f849dab16ae58b0e4d9 0.0s done
+#15 exporting attestation manifest sha256:1b396e945109b74e17d277c96a1c344e355f22d92e91bf79db8a642785dcd31b 0.0s done
+#15 exporting manifest list sha256:ef23a62e10ae71a9871bf5e691b4e8085dd796c528480ba401e797fcd69c4628
+#15 exporting manifest list sha256:ef23a62e10ae71a9871bf5e691b4e8085dd796c528480ba401e797fcd69c4628 0.0s done
+#15 naming to docker.io/library/task-api:latest done
+#15 unpacking to docker.io/library/task-api:latest
+#15 unpacking to docker.io/library/task-api:latest 6.0s done
+#15 DONE 8.7s

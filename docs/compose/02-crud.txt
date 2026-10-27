@@ -1,0 +1,79 @@
+﻿# CRUD requests to the API (2026-10-28 00:56:41)
+
+> curl.exe -s -i -X GET http://localhost:8080/tasks
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:56:42 GMT
+
+[]
+
+> curl.exe -s -i -X POST -H "Content-Type: application/json" -d @requests/create-task.json http://localhost:8080/tasks
+HTTP/1.1 201 
+Location: /tasks/1
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:56:42 GMT
+
+{"id":1,"title":"Prepare weekly report","description":"Collect team results for the week","completed":false,"createdAt":"2026-10-27T21:56:42.207849Z","updatedAt":null}
+
+> curl.exe -s -i -X POST -H "Content-Type: application/json" -d @requests/create-task-2.json http://localhost:8080/tasks
+HTTP/1.1 201 
+Location: /tasks/2
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:56:42 GMT
+
+{"id":2,"title":"Review pull request","description":"Check the new login form","completed":false,"createdAt":"2026-10-27T21:56:42.426578Z","updatedAt":null}
+
+> curl.exe -s -i -X GET http://localhost:8080/tasks
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:56:42 GMT
+
+[{"id":1,"title":"Prepare weekly report","description":"Collect team results for the week","completed":false,"createdAt":"2026-10-27T21:56:42.207849Z","updatedAt":null},{"id":2,"title":"Review pull request","description":"Check the new login form","completed":false,"createdAt":"2026-10-27T21:56:42.426578Z","updatedAt":null}]
+
+> curl.exe -s -i -X GET http://localhost:8080/tasks/1
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:56:42 GMT
+
+{"id":1,"title":"Prepare weekly report","description":"Collect team results for the week","completed":false,"createdAt":"2026-10-27T21:56:42.207849Z","updatedAt":null}
+
+> curl.exe -s -i -X PUT -H "Content-Type: application/json" -d @requests/update-task.json http://localhost:8080/tasks/1
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:56:42 GMT
+
+{"id":1,"title":"Prepare weekly report","description":"Report sent to the manager","completed":true,"createdAt":"2026-10-27T21:56:42.207849Z","updatedAt":"2026-10-27T21:56:42.769719Z"}
+
+> curl.exe -s -i -X DELETE http://localhost:8080/tasks/2
+HTTP/1.1 204 
+Date: Tue, 27 Oct 2026 21:56:42 GMT
+
+
+> curl.exe -s -i -X GET http://localhost:8080/tasks/2
+HTTP/1.1 404 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:56:42 GMT
+
+{"error":"Task 2 not found"}
+
+> curl.exe -s -i -X GET http://localhost:8080/tasks
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 27 Oct 2026 21:56:43 GMT
+
+[{"id":1,"title":"Prepare weekly report","description":"Report sent to the manager","completed":true,"createdAt":"2026-10-27T21:56:42.207849Z","updatedAt":"2026-10-27T21:56:42.769719Z"}]
+
+> docker compose exec -T db psql -U postgres -d app -c "SELECT id, title, completed, created_at, updated_at FROM tasks ORDER BY id;"
+ id |         title         | completed |          created_at           |          updated_at           
+----+-----------------------+-----------+-------------------------------+-------------------------------
+  1 | Prepare weekly report | t         | 2026-10-27 21:56:42.207849+00 | 2026-10-27 21:56:42.769719+00
+(1 row)
+
